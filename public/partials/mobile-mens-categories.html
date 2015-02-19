@@ -1,0 +1,5 @@
+<section class="row no-top-margin touch-footer">
+  <ul class="mobile-cats">
+    <li ng-repeat="category in categories.list() | filter:{ is_female_only: false } | orderBy:'name'" ui-sref="categoryView({gender: 'male', catID: '{{category.id}}', category: '{{category.name}}'})"><a >{{category.name}}</a></li>
+  </ul>
+</section>

@@ -1,0 +1,25 @@
+<section class='row'>
+  <h1 class="centered">Your Saved Products</h1>
+</section>
+<section class="row">
+  <div class="cards">
+    <div class="card" ng-repeat="product in wishlist.listProducts() track by $index" >
+      <div class="card-image" ui-sref="productDetail({productID: product.id})">
+        <img ng-src="{{product.image_url}}" alt="">
+      </div>
+      <div class="card-header">
+        {{ product.brand_name }}
+      </div>
+      <div class="card-copy">
+        <p ng-bind-html="product.name"></p>
+      </div>
+      <div class="card-stats">
+        <ul>
+          <li>{{ product.display_price | currency : '£' }}</li>
+          <li><a ng-click="removeFromWishlist(product)">Saved</a></li>
+          <!-- <li>923<span>Objects</span></li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

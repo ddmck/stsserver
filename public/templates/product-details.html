@@ -1,0 +1,37 @@
+<div>
+  <div class="expander" ng-controller="ToggleController">
+    <a href="javascript:void(0)" ng-class="{'expander-hidden': !open}" class="expander-trigger" ng-click="toggle()">Description</a>
+    <div class="expander-content">
+      <p>{{product.description}}</p>
+    </div>
+  </div>
+  <div class="expander" ng-controller="ToggleController">
+    <a href="javascript:void(0)" ng-class="{'expander-hidden': !open}" class="expander-trigger" ng-click="toggle()">Delivery</a>
+    <div class="expander-content">
+      <p>
+        Standard Delivery Price: 
+          <strong ng-show="storeDetails.standard_price > 0">{{storeDetails.standard_price | currency: '£'}}</strong>
+          <strong ng-hide="storeDetails.standard_price > 0">Free</strong>
+        <br>
+        <span ng-show="storeDetails.express_price">Express Delivery Price: <strong>{{storeDetails.express_price | currency: '£'}}</strong></span>
+        <br>
+        <span ng-show="storeDetails.free_delivery_threshold">Free Standard Delivery when you spend more than {{storeDetails.free_delivery_threshold | currency: '£'}}</span>
+      </p>
+      <div btf-markdown="storeDetails.delivery_copy">
+       
+      </div>
+    </div>
+  </div>
+  <div class="expander" ng-controller="ToggleController">
+    <a href="javascript:void(0)" ng-class="{'expander-hidden': !open}" class="expander-trigger" ng-click="toggle()">Returns</a>
+    <div class="expander-content">
+      <p>Return within: 
+        <span ng-show="storeDetails.days_to_return"><strong>{{storeDetails.days_to_return}} Days</strong></span>
+        <span ng-hide="storeDetails.days_to_return"><strong>See Retailer</strong></span>
+      </p>
+      <div btf-markdown="storeDetails.returns_copy">
+       
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<header class="navigation" role="banner">
+  <div>
+    <a href="javascript:void(0)" ui-sref="welcome" class="logo">
+      <img src="images/fmflogowhite.png"></img>
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <li class="nav-link" ui-sref-active="active"><a ui-sref="products.new">New</a></li>
+        <li class="nav-link" ui-sref-active="active"><a ui-sref="products.saved">Saved Products</a></li>
+        <li class="nav-link mob" ui-sref-active="active"><a ui-sref="mens">Mens</a></li>
+        <li class="nav-link mob" ui-sref-active="active"><a ui-sref="womens">Womens</a></li>
+        <li class="nav-link more" ng-controller="CategoryController"><a href="javascript:void(0)">Mens</a>
+          <ul class="submenu">
+            <li ng-repeat="category in categories.list() | filter:{ is_female_only: false } | orderBy:'name'">
+              <a ui-sref="categoryView({gender: 'male', catID: '{{category.id}}', category: '{{category.name}}'})">
+                {{category.name}}
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-link more" ng-controller="CategoryController"><a href="javascript:void(0)">Womens</a>
+          <ul class="submenu">
+            <li ng-repeat="category in categories.list() | orderBy:'name'">
+              <a ui-sref="categoryView({gender: 'female', catID: '{{category.id}}', category: '{{category.name}}'})">
+                {{category.name}}
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-link" ui-sref-active="active"><a ui-sref="basket">Basket</a></li>
+      </ul>
+    </nav>
+    <div class="navigation-tools">
+      <div class="search-bar" ng-controller="SearchController as SearchCtrl">
+        <form role="search" ng-submit="SearchCtrl.updateSearch(searchString)">
+          <input type="search" ng-model="searchString" placeholder="Enter Search" />
+          <button type="submit">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon"></img>
+          </button>
+        </form>
+      </div>
+      <a href="javascript:void(0)" ng-controller="UserSessionsController" class="sign-up" ui-sref="account.signUp">{{user.id}} Sign Up</a>
+    </div>
+  </div>
+</header>

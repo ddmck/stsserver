@@ -1,0 +1,27 @@
+<section class="row">
+  <div class="cards" ng-controller="ProductsController as products" infinite-scroll="products.nextPage(products.products)" infinite-scroll-distance="1" infinite-scroll-immediate-check='{{ products.scrollActive }}'>
+    <div class="card" ng-repeat="product in products.products.getProducts() track by $index" >
+      <div class="card-image" ng-click="products.viewProduct(product)">
+        <img ng-src="{{product.image_url}}" alt="">
+      </div>
+      <div class="card-header">
+        {{ product.brand_name }}
+      </div>
+      <div class="card-copy">
+        <p ng-bind-html="product.name"></p>
+      </div>
+      <div class="card-stats">
+        <ul>
+          <li>{{ product.display_price | currency : '£' }}</li>
+          <li><a ng-click="products.addToWishlist(product)"><span ng-show="!products.checkIfWishedFor(product.id)">Save</span><span ng-show="products.checkIfWishedFor(product.id)">Saved</span></a></li>
+          <!-- <li>923<span>Objects</span></li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="card" ng-show="products.products.currentlySearching()">
+      <div class="spinner">
+        <img src="images/fmflogowhite.png"></img>
+      </div>
+    </div>
+  </div>
+</section>

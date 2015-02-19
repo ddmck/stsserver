@@ -1,0 +1,24 @@
+<div class="hero">
+  <div class="hero-inner">
+    <a href="" class="hero-logo"><img src="images/fmflogowhiteshadow2x.png
+" alt="Logo Image"></a>
+    <div class="hero-copy">
+      <!-- <h1>{{msg}} <span ng-show="wishlist.list().length > 1">You know you want them, buy one of your {{wishlist.list().length}} wishlist items now!</span></h1> -->
+      <h1 class="cd-headline rotate-1">
+        <span>The Best </span>
+        <span class="cd-words-wrapper">
+          <b class="is-visible">Stores</b>
+          <b>Brands</b>
+          <b>Prices</b>
+        </span>
+        <span> - One Basket</span>
+      </h1>
+    </div>
+    <form class="search-bar" role="search" ng-controller="SearchController as SearchCtrl" ng-submit="SearchCtrl.updateSearch(searchString)">
+      <input type="search" ng-model="searchString" placeholder="Enter Search" />
+      <button type="submit">
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<section class="row">
+  <ul>
+    <li ng-repeat="category in categories.list() | filter:{ is_female_only: false } | orderBy:'name'"><a ui-sref="categoryView({gender: 'male', catID: '{{category.id}}', category: '{{category.name}}'})">{{category.name}}</a></li>
+  </ul>
+</section>

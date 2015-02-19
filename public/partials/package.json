@@ -1,0 +1,10 @@
+{
+  "name": "fmfServer",
+  "description": "Server for FMF index page, allowing prerender etc",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "express": "latest",
+    "prerender-node": "latest"
+  }
+}

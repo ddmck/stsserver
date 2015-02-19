@@ -1,0 +1,9 @@
+<div class="dropdown">
+  <div class="dropdown-container">
+    <p class="dropdown-description">Size</p>
+    <p class="dropdown-button" ng-click="toggleMenu()">{{size.name || "Click to Select"}}</p>
+    <ul class="dropdown-menu dropdown-select" ng-class="{'show-menu': showMenu}" >
+      <li ng-repeat="size in product.sizes" ng-click="selectSize(size)">{{size.name}}</li>
+    </ul>
+  </div>
+</div>

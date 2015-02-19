@@ -1,0 +1,29 @@
+<div class="title">
+  <section class="row">
+    <h1>Your Orders</h1>
+  </section>
+</div>
+
+<section class="row">
+  <ul>
+    <li ng-repeat="order in orders.list()">
+      <div class="comment">
+        <div class="comment-image">
+          {{order.created_at | date}}
+        </div>
+        <div class="comment-content">
+          <h1>Items ({{order.display_order_items.length}})</h1>
+          <ul>
+            <li ng-repeat="orderItem in order.display_order_items">
+              <p>{{orderItem.name}}</p>
+              <p class="comment-detail">{{orderItem.display_price | currency : '£'}}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      
+    </li>
+    
+  </ul>
+</section>  

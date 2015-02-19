@@ -1,0 +1,21 @@
+<h3>Billing details</h3>
+<p ng-show="localStorage.token">Perfect, you're almost good to go</p>
+<button ng-show="localStorage.token" ui-sref="pay.confirmation">Continue</button> <a ng-show="localStorage.token" ng-click="clear()">Clear</a>
+
+<form ng-hide="localStorage.token" stripe-form="handleStripe" role="form" ng-init="billingForm = {}">
+  {{billingForm.error.message}}
+  <div class="form-group"> 
+    <label for="number">Credit/Debit Card Number</label> 
+    <input type="text" ng-model="number" payments-validate="card" payments-type-model="type" payments-format="card"/>
+  </div>
+  <div class="form-group"> 
+    <label for="expiry">Expiry Date</label> 
+    <input type="text" ng-model="expiry" payments-validate="expiry" payments-format="expiry"/>
+  </div>
+  <div class="form-group"> 
+    <label for="cvc">CVC/CVV Number</label> 
+    <input type="text" ng-model="cvc" payments-validate="cvc" payments-type-model="type" payments-format="cvc"/>
+  </div>
+ 
+  <button type="submit" class="btn btn-primary btn-lg">Next</button> 
+</form>

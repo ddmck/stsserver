@@ -11,5 +11,5 @@ app.get('*', function(req, res){
   res.sendfile('./public/index.html'); 
 });
 
-app.listen(8081); 
+app.listen(process.env.PORT || 8081); 
 console.log("Go Prerender Go!");

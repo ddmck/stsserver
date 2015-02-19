@@ -40,7 +40,8 @@
           </button>
         </form>
       </div>
-      <a href="javascript:void(0)" ng-controller="UserSessionsController" class="sign-up" ui-sref="account.signUp">{{user.id}} Sign Up</a>
+      <a href="javascript:void(0)" ng-controller="UserSessionsController" class="sign-up" ng-hide="user.id" ui-sref="account.signUp">Sign Up</a>
+      <a class="sign-up" ng-show="user.id" ng-click='signOut()'>Sign out</a>
     </div>
   </div>
 </header>

@@ -705,7 +705,7 @@ app.controller('UserSessionsController', ['$scope', '$state', '$auth', '$localSt
       $state.go($localStorage.returnTo);
       delete $localStorage.returnTo;
     } else {
-      $state.go('new');
+      $state.go('products.new');
     }
         
   });

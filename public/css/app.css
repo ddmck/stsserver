@@ -893,19 +893,18 @@ header.navigation {
           display: block; } }
 
 .hero {
-  background: url("/images/cover.jpeg");
-  background: url("/images/cover.jpeg");
+  background: url("/images/cover.jpeg"), no-repeat center center fixed;
+  background: url("/images/cover.jpeg"), no-repeat center center fixed;
   background-color: #324766;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   padding-bottom: 3em;
   margin-bottom: -2em;
-  height: 100vh; }
+  height: 100vh;
+  background-size: cover; }
   @media screen and (min-width: 53.75em) {
     .hero {
-      background: url("/images/coverbricklarge.jpg");
-      background: url("/images/coverbricklarge.jpg"); } }
+      background: url("/images/coverlargealt.jpg"), no-repeat center center fixed;
+      background: url("/images/coverlargealt.jpg"), no-repeat center center fixed;
+      background-size: cover; } }
   .hero .hero-logo img {
     height: 4em;
     margin-bottom: 1em; }

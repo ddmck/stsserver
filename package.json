@@ -5,6 +5,7 @@
   "private": "true",
   "dependencies": {
     "express": "latest",
+    "express-handlebars": "^1.2.1",
     "prerender-node": "latest"
   }
 }

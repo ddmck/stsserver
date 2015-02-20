@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="google-site-verification" content="64Vxn64R08Dd1MUbJooZZ9k2mCWaCCVfgeOYt5PpC9k" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="fragment" content="!"/>
+  <base href="/"></base>
+  <!-- <base href="/"> -->
+  <title>Fetch My Fashion</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{assetUrl}}/css/app.css"/>
+  <link rel="icon" 
+      type="image/png" 
+      href="{{assetUrl}}/images/favicon.png"/>
+  
+  <!-- JS -->
+  <!-- load angular, nganimate, and ui-router -->
+</head>
+
+<!-- apply our angular app -->
+<body ng-app="App">
+  <div ng-nav-bar></div>
+  <!-- <div ng-callouts></div> -->
+  
+  <div id="main-view" ui-view></div>
+
+  <div ng-footer></div>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script src="{{assetUrl}}/js/lib.js"></script>
+  <script src="{{assetUrl}}/js/app.js"></script>
+</body>
+</html>

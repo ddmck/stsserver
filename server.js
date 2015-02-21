@@ -10,10 +10,20 @@ var hbs = exphbs.create({
   }
 });
 
+function requireHTTPS(req, res, next) {
+  if (!req.secure && process.env.FMF_ASSET_PATH != "http://localhost:9000") {
+      //FYI this should work for local development as well
+      return res.redirect('https://' + req.get('host') + req.url);
+  }
+  next();
+}
+
+
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(prerender.set('prerenderToken', 'NBDy0Xc1435JXDrCppLQ')); 
-
+app.use(requireHTTPS);
 // This will ensure that all routing is handed over to AngularJS 
 app.get('*', function(req, res){ 
   res.render('index', {layout: false});

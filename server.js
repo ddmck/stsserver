@@ -18,6 +18,7 @@ var forceSsl = function (req, res, next) {
   return next();
 };
 
+console.log("ENV:  " + env)
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

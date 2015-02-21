@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html ng-app="App">
+<head ng-controller="HeadController">
   <meta charset="utf-8">
   <meta name="google-site-verification" content="64Vxn64R08Dd1MUbJooZZ9k2mCWaCCVfgeOYt5PpC9k" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="fragment" content="!"/>
   <base href="/"></base>
   <!-- <base href="/"> -->
-  <title>Fetch My Fashion</title>
+  <title ng-meta-title></title>
+  <meta ng-meta-description>
   <!-- CSS -->
   <link rel="stylesheet" href="{{assetUrl}}/css/app.css"/>
   <link rel="icon" 
@@ -28,7 +29,7 @@
 </head>
 
 <!-- apply our angular app -->
-<body ng-app="App">
+<body>
   <div ng-nav-bar></div>
   <!-- <div ng-callouts></div> -->
   

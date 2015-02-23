@@ -33,4 +33,4 @@ app.get('*', function(req, res){
 
 app.listen(process.env.PORT || 8081); 
 console.log("Go Prerender Go!");
-console.log(process.env.FMF_ASSET_PATH);
+console.log("Assets from: " + process.env.FMF_ASSET_PATH);

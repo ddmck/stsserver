@@ -1,5 +1,4 @@
 var express = require('express');
-var prerender = require('prerender-node');
 var exphbs = require('express-handlebars');
 var app = express();
 var hbs = exphbs.create({
@@ -22,7 +21,6 @@ console.log("ENV:  " + env)
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.use(prerender.set('prerenderToken', 'NBDy0Xc1435JXDrCppLQ'));
 // if (env === 'production') {
 //   app.use(forceSsl);
 // }
@@ -32,5 +30,4 @@ app.get('*', function(req, res){
 });
 
 app.listen(process.env.PORT || 8888); 
-console.log("Go Prerender Go!");
 console.log("Assets from: " + process.env.STS_ASSET_PATH);
